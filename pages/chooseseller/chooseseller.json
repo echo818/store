@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择供应商",
+  "usingComponents": {
+    "swipeout": "../../components/swipeout/swipeout",
+    "dialog": "../../components/dialog/dialog"
+  }
+}

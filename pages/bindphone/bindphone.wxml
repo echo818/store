@@ -1,0 +1,27 @@
+<!-- head -->
+<view class='head-tips flex-box'>
+  <image class='head-tips__img' src='../../images/warn_icon.png'/>
+  <view class='head-tips__text'>为了您的账号安全，请先绑定手机号</view>
+</view>
+<!-- form -->
+<form class='form-box white-bg'>
+  <view class='form-cell flex-box'>
+    <image class='form-cell__icon--phone' src='../../images/phone_icon.png'/>
+    <input class='form-cell__input' type='number' maxlength='11' placeholder='手机号' bindinput='inputEvt' data-type='phone'/>
+  </view>
+  <view class='form-cell flex-box'>
+    <image class='form-cell__icon--code' src='../../images/code_icon.png'/>
+    <input class='form-cell__input' type='number' maxlength='4' placeholder='验证码' bindinput='inputEvt' data-type='vcode'/>
+    <button class='form-cell__btn {{disabled && "form-cell__btn--disabled"}} btn--red' bindtap='getCode'>{{disabled ? '重新获取(' + time + ')' : '获取验证码'}}</button>
+  </view>
+</form>
+<!-- button -->
+<button class='save__btn btn--red' bindtap='submitEvt'>确认绑定</button>
+<!-- dialog -->
+<dialog visible='{{visible}}' bindclose='closeEvt' isMask='{{false}}' isClose='{{true}}'>
+  <view class='dialog-box'>
+    <view class='dialog__title'>绑定成功</view>
+    <view class='dialog__text'>继续完善店铺信息方便您下单</view>
+    <button class='dialog__btn btn--red' bindtap='storeEvt'>完善店铺信息</button>
+  </view>
+</dialog>

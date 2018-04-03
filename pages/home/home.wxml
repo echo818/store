@@ -1,0 +1,147 @@
+<!-- head -->
+<view class='head-tips mb-18 flex-box' wx:if='{{tipShow}}'>
+  <image class='head-tips__img' src='../../images/home_close_icon.png' bindtap='closeEvt'/>
+  <view class='head-tips__text'>为了您的账号安全，请先绑定手机号</view>
+  <button class='head-tips__btn btn--red' bindtap='bindEvt'>去绑定</button>
+</view>
+<!-- store -->
+<view class='store-box white-bg'>
+  <!-- search -->
+  <view class='search-box flex-box'>
+    <picker bindchange='pickerEvt' value='0' range='{{wholesalerList}}' range-key='wholesaler_name'>
+      <view class='search-select__title arrow__icon ellipsis'>{{wholesalerInfo.wholesaler_name}}</view>
+    </picker>
+    <view class='search-btn' bindtap='searchEvt'>
+      <image class='search-btn__img' src='../../images/home_search_icon.png'/>
+      <text class='search-btn__text'>搜索您想要的商品</text>
+    </view>
+  </view>
+  <!-- store-info -->
+  <view class='store-info-box flex-box' bindtap='storeEvt'>
+    <view class='store-avatar'>
+      <image class='store-avatar__img' src='{{wholesalerInfo.logo}}'/>
+    </view>
+    <view class='store-info'>
+      <view class='store-info__name ellipsis'><text class='store-info__text arrow__icon'>{{wholesalerInfo.wholesaler_name}}</text></view>
+      <view class='store-notice-box flex-box'>
+        <image class='store-notice__img' src='../../images/notice_icon.png'/>
+        <view class='store-notice__text ellipsis'>{{wholesalerInfo.notice_title}}</view>
+        <!-- <swiper class='store-notice' autoplay='{{true}}' interval='{{2000}}' circular='{{true}}' vertical='{{true}}'>
+          <swiper-item>
+            <view class='store-notice__text ellipsis'>公告公告公告，公告，公告告····</view>
+          </swiper-item>
+        </swiper> -->
+      </view>
+      <view class='store-tag__text'>{{wholesalerInfo.delivery_info}}</view>
+    </view>
+  </view>
+  <view class='store-coupon-box'>
+    <scroll-view class='store-coupon' scroll-x>
+      <view class='store-coupon-item {{item.state && "store-coupon-item--disabled"}}' wx:for='{{couponList}}' wx:key='{{index}}' bindtap='couponEvt' data-state='{{item.state}}'>
+        <image class='store-coupon__img' src='{{item.state ? "../../images/coupon_bg--disabled.png" : "../../images/coupon_bg.png"}}'/>
+        <view class='store-coupon-content flex-box'>
+          <view class='store-coupon__price'>{{item.discount}}<text class='store-coupon__unit'>￥</text></view>
+          <view class='store-coupon-info'>
+            <view class='store-coupon__limit'>{{item.use_condition}}</view>
+            <button class='store-coupon__btn' wx:if='{{item.state}}'>已领取</button>
+            <button class='store-coupon__btn' wx:else catchtap='receiveEvt' data-id='{{item.rule_id}}' data-idx='{{index}}'>立即领取</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- discount -->
+  <view class='store-discount-box'>
+    <view class='store-discount {{openState && "store-discount--open"}}'>
+      <view class='store-discount-item flex-box arrow__icon' wx:for='{{promotionTags}}' wx:key='{{index}}' bindtap='promotionEvt' data-item='{{item}}'>
+        <text class='store-discount__tag'>{{item.icon_text}}</text>
+        <text class='store-discount__text ellipsis'>{{item.text}}</text>
+      </view>
+    </view>
+    <view class='store-discount-ctrl' wx:if='{{promotionTags.length > 2}}' bindtap='openEvt'>
+      <button class='store-discount-btn'>
+        <text class='store-discount-btn__text {{openState && "store-discount-btn__text--fold"}} arrow__icon'>{{openState ? '收起' : '展开'}}</text>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- nav -->
+<view class='nav-box flex-box mt-18 white-bg'>
+  <view class='nav-item' wx:for='{{category}}' wx:key='{{index}}' bindtap='navEvt' data-id='{{item.id}}'>
+    <image class='nav-item__img' src='{{item.icon}}'/>
+    <view class='nav-item__text'>{{item.name}}</view>
+  </view>
+</view>
+<!-- topic -->
+<view class='topic-box'>
+  <view class='topic-head flex-box'>
+    <view class='topic-title'>
+      <image class='topic-title__img' src='../../images/topic_title_icon.png'/>
+      <text class='topic-title__text'>天天特价</text>
+    </view>
+    <view class='topic-subtitle' bindtap='topicTap'>
+      <text class='topic-subtitle__text'>省钱就靠这些了</text>
+      <image class='topic-subtitle__img' src='../../images/topic_right_icon.png'/>
+    </view>
+  </view>
+  <view class='topic-goods flex-box'>
+    <view class='topic-goods-item' wx:for='{{specialProducts}}' wx:key='{{index}}' bindtap='topicEvt' data-id='item.first_category_id'>
+      <image class='topic-goods__img' src='{{item.image}}'/>
+      <view class='topic-goods__text'><text class='topic-goods__unit'>￥</text>{{item.price}}</view>
+    </view>
+  </view>
+</view>
+<!-- activity -->
+<view class='home-head white-bg'>
+  <image class='home-head__img' src='../../images/activity_title_icon.png'/>
+</view>
+<view class='activity-box white-bg'>
+  <scroll-view class='activity-scroll' scroll-x>
+    <view class='activity-item' wx:for='{{promotion}}' wx:key='{{index}}' bindtap='activityEvt' data-id='{{item.rule_id}}'>
+      <image class='activity__img' src='../../images/promotion_bg{{index % 4}}.png'/>
+      <view class='activity-content'>
+        <view class='activity__title'>{{item.name}}</view>
+        <view class='activity__desc'><text class='activity__desc--text ellipsis'>{{item.description}}</text></view>
+        <view class='activity__time arrow__icon'>{{item.from_date}}-{{item.to_date}}</view>
+      </view>
+    </view>
+    <image class='activity-more__img' src='../../images/promotion_bg.png'/>
+  </scroll-view>
+</view>
+<!-- hot -->
+<view class='hot-box mt-18'>
+  <view class='home-head'>
+    <image class='home-head__img' src='../../images/hot_title_icon.png'/>
+  </view>
+  <view class='hot-goods-box' scroll-y='{{true}}'>
+    <view class='hot-goods flex-box'>
+      <view class='hot-goods-item' wx:for='{{productList}}' wx:key='{{index}}' bindtap='detailsEvt' data-id='{{item.product_id}}'>
+        <image class='hot-goods__img' src='{{item.image}}'/>
+        <view class='hot-goods-coupon'>
+          <text class='hot-goods__tag' wx:for='{{item.tags}}' wx:for-index='subIdx' wx:for-item='subItem' wx:key='{{subIdx}}' style='{{"border: 1rpx solid " + subItem.color + "; color: " + subItem.color + ";"}}'>{{subItem.short}}</text>
+        </view>
+        <view class='hot-goods__title ellipsis'>{{item.name2}}</view>
+        <view class='hot-goods__spec ellipsis'><text class='hot-goods__spec--text'>{{item.spec}}</text></view>
+        <view class='hot-goods-info flex-box'>
+          <text class='hot-goods__price'>¥<text class='hot-goods__price--text'>{{item.price}}</text>/{{item.sale_unit}}</text>
+          <image class='hot-goods__buy' src='../../images/goods_buy_icon.png' catchtap='buyEvt' data-item='{{item}}'/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- dialog -->
+<dialog visible='{{promotionShow}}' isMask='{{false}}'>
+  <view class='dialog-box'>
+    <view class='dialog__title'>全场满减</view>
+    <view class='dialog__Text'>活动名称：{{promotionInfo.name}}</view>
+    <view class='dialog__Text'>活动时间：{{promotionInfo.from_date}} 至 {{promotionInfo.to_date}}</view>
+    <view class='dialog__Text'>参与次数：{{rule_uses_limit ? rule_uses_limit + '次' : '不限制'}}</view>
+    <button class='dialog__btn btn--red' bindtap='closePromoEvt'>知道了</button>
+  </view>
+</dialog>
+<!-- buydialog -->
+<buydialog visible='{{buyShow}}'
+  price='{{buyPrice}}'
+  stock='{{stock}}'
+  bindconfirm='confirmNum'/>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "buydialog": "../../components/buydialog/buydialog"
+  }
+}

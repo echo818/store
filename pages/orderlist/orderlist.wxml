@@ -1,0 +1,39 @@
+<!--pages/orderlist/orderlist.wxml-->
+<import src="../../dist/tab/index.wxml" />
+
+<view>
+  <template is="zan-tab" data="{{tab: indexTab, componentId: 'indexTab'}}"/>
+  <view class="order-list" wx:if="{{true}}">
+    <view class="split-line flex-row order-hd">
+      <view class="flex-1">
+        <view class="order-ws">新百惠商行</view>
+        <view class="order-id">单号：1704220510490992506</view>
+      </view>
+      <view class="order-status">{{indexTab.list[indexTab.selectedId-1].title}}</view>
+  </view>
+    <navigator url="../catalogue/catalogue" class="flex-row split-line order-prods">
+      <view class="flex-1">
+        <image class="order-prod__img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+        <image class="order-prod__img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+        <image class="order-prod__img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+      </view>
+      <text class="dot" style="margin-right:12rpx;"/>
+      <text class="dot" style="margin-right:12rpx;"/>
+      <text class="dot" style="margin-right:80rpx;"/>
+      <view class="order-prod__total">
+        共17件
+        <image class="arrow-right-icon" src="/images/arrow_right_icon.png"/>
+      </view>
+    </navigator>
+    <view class="split-line flex-row order-pay" style="justify-content:flex-end;">实付：￥1247.00</view>
+    <view class="flex-row order-opts" style="justify-content:space-around;">
+      <view class="btn-red">联系商家</view>
+      <view class="btn-red">申请取消</view>
+      <view class="btn-solid-red">确认收货</view>
+    </view>
+  </view>
+  <view class="flex-col order-no-data" wx:else>
+    <image class="no-data-img" src="/images/no_order.png"/>
+    您没有相关的订单哦~
+  </view>
+</view>

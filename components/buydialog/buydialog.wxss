@@ -1,0 +1,104 @@
+.dialog-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, .3);
+}
+.dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 468rpx; 
+  padding: 42rpx 72rpx 56rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  z-index: 2001;
+  transform: translate(-50%, -50%);
+}
+/* btn */
+.dialog-main {
+  padding-bottom: 64rpx;
+}
+.dialog__title {
+  line-height: 36rpx;
+  padding-bottom: 32rpx;
+  font-size: 34rpx;
+  color: #232326;
+  text-align: center;
+}
+.dialog-info {
+  display: flex;
+  line-height: 30rpx;
+  padding-bottom: 18rpx;
+}
+.dialog-info__price {
+  flex: 1;
+  font-size: 28rpx;
+  color: #81838E;
+}
+.dialog-info__price--text {
+  color: #D4372F;
+}
+.dialog-info__tips {
+  font-size: 28rpx;
+  color: #81838E;
+}
+/* ctrl */
+.dialog-ctrl {
+  display: flex;
+}
+.dialog-ctrl__btn {
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0;
+  font-size: 80rpx;
+  background: rgba(0, 0, 0, 0);
+  border: 1rpx solid #E0E0E0;
+}
+.dialog-ctrl__btn--cut {
+  color: #81838E;
+  border-radius: 8rpx 0 0 8rpx;
+}
+.dialog-ctrl__btn--add {
+  color: #D4372F;
+  border-radius: 0 8rpx 8rpx 0;
+}
+.dialog-ctrl__btn::after {
+  border: 0;
+}
+.dialog-ctrl__input {
+  flex: 1;
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 32rpx;
+  color: #232326;
+  text-align: center;
+  border-top: 1rpx solid #E0E0E0;
+  border-bottom: 1rpx solid #E0E0E0;
+}
+/* btn */
+.dialog-btn {
+  display: flex;
+}
+.dialog__btn {
+  flex: 1;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+}
+.dialog__btn::after {
+  border: 0;
+}
+.dialog__btn--cancel {
+  color: #232326;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #E0E0E0;
+}
+.dialog__btn--confirm {
+  margin-left: 24rpx;
+  color: #fff;
+  background: #D4372F;
+}

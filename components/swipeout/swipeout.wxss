@@ -1,0 +1,15 @@
+.swipe-box {
+  position: relative;
+}
+.swipe-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+  height: 100%;
+}
+.swipe-cell {
+  position: relative;
+  background: #fff;
+}

@@ -1,0 +1,157 @@
+/* pages/commitorder/commitorder.wxss */
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+.cmt-order__block {
+  padding: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 18rpx;
+}
+.height-88 {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.split-line {
+  border-bottom: 1rpx solid #e0e0e0;
+}
+/* .cmt-order__rcvr {
+
+} */
+.cmt-order__rcvr--name {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 30rpx;
+  margin-bottom: 18rpx;
+}
+.cmt-order__rcvr--addr {
+  margin-bottom: 30rpx;
+}
+.cmt-order__rcvr--hint {
+  font-size: 22rpx;
+  color: #f48f19;
+  margin-top: 15rpx;
+}
+.info-icon {
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.cmt-order__setaddr {
+  height: 136rpx;
+  line-height: 136rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.cmt-order__setaddr--icon {
+  width: 30rpx;
+  height: 38rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.ws {
+  font-size: 30rpx;
+  color: #232326;
+}
+.ws-icon {
+  width: 40rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+ }
+.cmt-order__prod {
+  height: 156rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.cmt-order__prod--img {
+  width: 106rpx;
+  height: 106rpx;
+  border:1px solid #e0e0e0;
+  margin-right: 22rpx;
+}
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background-color: #e0e0e0;
+}
+.cmt-order__prod--total {
+  font-size: 32rpx;
+  color: #333;
+}
+.cmt-order__coupon {
+  padding: 30rpx 0;
+}
+.cmt-order__coupon--title {
+  margin-bottom: 30rpx;
+}
+.cmt-order__coupon--name {
+  font-size: 28rpx;
+  color: #f48f19;
+  margin-bottom: 24rpx;
+}
+.cmt-order__coupon--name:last-child {
+  margin-bottom: 0;
+}
+.cmt-order__usecoupon {
+  font-size: 32rpx;
+  color: #dd2727;
+}
+.cmt-order__msg {
+  height: 240rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.cmt-order__msg--title {
+  margin-bottom: 30rpx;
+}
+.cmt-order__msg--content {
+  font-size: 28rpx;
+  color: #a8a8a8;
+  width: 690rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+.arrow-right-icon {
+  width: 18rpx;
+  height: 30rpx;
+}
+.cmt-order__total {
+  padding: 30rpx 30rpx;
+}
+.color-666 {
+  font-size: 30rpx;
+  color: #666;
+}
+.color-232 {
+  font-size: 30rpx;
+  color: #232326;
+}
+.cmt-order__sum {
+  background-color: #d4372f;
+  font-size: 36rpx;
+}
+.cmt-order__pay {
+  background-color: #fff;
+  padding: 26rpx 0;
+}
+.cmt-order__save {
+  font-size: 28rpx;
+  color: #848689;
+}
+.cmt-order__cmt {
+  width: 232rpx;
+  text-align: center;
+  color: #fff;
+}

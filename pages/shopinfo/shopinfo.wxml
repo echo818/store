@@ -1,0 +1,40 @@
+<!-- shop -->
+<view class='shop-box white-bg'>
+  <view class='shop__title'>店主信息</view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>姓名:</text>
+    <text class='shop-item__text'>王呆呆</text>
+  </view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>电话:</text>
+    <text class='shop-item__text'>18080808080</text>
+  </view>
+</view>
+<!-- shop -->
+<view class='shop-box white-bg mt-18'>
+  <view class='shop__title'>店铺基础信息</view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>店铺名称:</text>
+    <text class='shop-item__text'>大梦一刻</text>
+  </view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>店铺地址:</text>
+    <text class='shop-item__text'>广东省深圳市南山区科技南6路万德莱大厦301B</text>
+  </view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>门面照片:</text>
+    <image class='shop-item__img' src='../../images/activity_goods_img.png'/>
+  </view>
+</view>
+<!-- shop -->
+<view class='shop-box white-bg mt-18'>
+  <view class='shop__title'>收货信息</view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>收货人:</text>
+    <text class='shop-item__text'>王呆呆</text>
+  </view>
+  <view class='shop-item'>
+    <text class='shop-item__label'>收货手机号:</text>
+    <text class='shop-item__text'>13290909090</text>
+  </view>
+</view>

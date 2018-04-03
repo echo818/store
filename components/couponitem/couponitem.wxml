@@ -1,0 +1,26 @@
+<!--components/couponitem/couponitem.wxml-->
+<view class="coupon-item">
+  <view class="coupon-item__body {{isActive ? 'coupon-item--active' : 'coupon-item--inactive'}}">
+    <view class="coupon-item__condition">
+      <view class="coupon-item__text" style="font-size:46rpx;line-height:100rpx;">￥{{item.discount}}</view>
+      <view class="coupon-item__text" style="font-size:24rpx;line-height:40rpx;">{{item.use_condition}}</view>
+    </view>
+    <view class="coupon-item__time">
+      <view class="coupon-item__text" style="font-size:28rpx;line-height:100rpx;">{{item.coupon_title}}</view>
+      <view class="coupon-item__text" style="font-size:24rpx;line-height:40rpx;">{{item.validity_time}}</view>
+    </view>
+  </view>
+  <!-- <view wx:if="{{indexTab.selectedId === 1}}" class="coupon-item__status .coupon-item__status--unused">立即使用</view>
+  <view wx:if="{{indexTab.selectedId === 2}}" class="coupon-item__status">
+    <image class="coupon-item__status--used" src="../../images/coupon_used.png"/>
+  </view>
+  <view wx:if="{{indexTab.selectedId === 3}}" class="coupon-item__status">
+    <image class="coupon-item__status--expired" src="../../images/coupon_expired.png"/>
+  </view> -->
+  <slot/>
+  <view class="kind-list-item-hd" bindtap="kindToggle">
+    <text class="kind-list-text">{{item.frontnote ? item.frontnote.indexOf('\n\r') : ''}}</text>
+    <image class="kind-list-img" src="/images/coupon_expand.png"/>
+  </view>
+  <image wx:if="{{hasCheck}}" style="width:60rpx;height:60rpx;position:absolute;right:0;" src="/images/coupon_checked.png"/> 
+</view>

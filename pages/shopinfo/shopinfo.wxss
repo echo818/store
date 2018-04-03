@@ -1,0 +1,6 @@
+/* shop */
+.shop-item__img {
+  width: 360rpx;
+  height: 360rpx;
+  vertical-align: top;
+}

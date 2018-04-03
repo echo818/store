@@ -1,0 +1,10 @@
+<!--pages/catalogue/catalogue.wxml-->
+<view>
+  <view style="font-size:28rpx;color:#999;height:68rpx;line-height:68rpx;padding-left:30rpx;">共212件商品</view>
+  <view wx:for="{{prods}}" wx:for-item="prod" wx:key="{{index}}" style="background-color:#fff;padding:0 30rpx;">
+    <cart-item item="{{prod}}">
+      <view slot="edit" data-item="{{prod}}">×{{prod.num}}</view>
+    </cart-item>
+    <view class="{{index < prods.length-1 ? 'split-line' : ''}}"></view>
+  </view>
+</view>

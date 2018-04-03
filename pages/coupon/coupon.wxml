@@ -1,0 +1,46 @@
+<!--pages/coupon/coupon.wxml-->
+<import src="../../dist/tab/index.wxml" />
+
+<view>
+  <template is="zan-tab" data="{{tab: indexTab, componentId: 'indexTab'}}"/>
+  <view class="coupon-box">
+    <view>
+      <view style="font-size:28rpx;padding:20rpx 0;">共{{coupons.length}}张优惠券</view>
+      <block wx:for="{{coupons}}" wx:key="{{index}}">
+        <coupon-item item="{{item}}" is-active="{{indexTab.selectedId === 1 ? true : false}}">
+          <view class="coupon-item__status .coupon-item__status--unused"
+            wx:if="{{indexTab.selectedId === 1}}"
+            data-type="{{item.type}}"
+            bindtap="goto">立即使用</view>
+          <view wx:if="{{indexTab.selectedId === 2}}" class="coupon-item__status">
+            <image class="coupon-item__status--used" src="../../images/coupon_used.png"/>
+          </view>
+          <view wx:if="{{indexTab.selectedId === 3}}" class="coupon-item__status">
+            <image class="coupon-item__status--expired" src="../../images/coupon_expired.png"/>
+          </view>
+        </coupon-item>
+        <!-- <view class="coupon-item__body {{indexTab.selectedId !== 1 ? 'coupon-item__body--disabled' : ''}}">
+          <view class="coupon-item__condition">
+            <view class="coupon-item__text" style="font-size:46rpx;line-height:100rpx;">￥{{item.discount}}</view>
+            <view class="coupon-item__text" style="font-size:24rpx;line-height:40rpx;">{{item.use_condition}}</view>
+          </view>
+          <view class="coupon-item__time">
+            <view class="coupon-item__text" style="font-size:28rpx;line-height:100rpx;">{{item.coupon_title}}</view>
+            <view class="coupon-item__text" style="font-size:24rpx;line-height:40rpx;">{{item.validity_time}}</view>
+          </view>
+        </view>
+        <view wx:if="{{indexTab.selectedId === 1}}" class="coupon-item__status .coupon-item__status--unused" data-type="{{item.type}}" bindtap="goto">立即使用</view>
+        <view wx:if="{{indexTab.selectedId === 2}}" class="coupon-item__status">
+          <image class="coupon-item__status--used" src="../../images/coupon_used.png"/>
+        </view>
+        <view wx:if="{{indexTab.selectedId === 3}}" class="coupon-item__status">
+          <image class="coupon-item__status--expired" src="../../images/coupon_expired.png"/>
+        </view>
+        <view class="kind-list-item-hd}}" bindtap="kindToggle">
+          <text class="kind-list-text">{{item.frontnote ? item.frontnote.indexOf('\n\r') : ''}}</text>
+          <image class="kind-list-img" src="/images/coupon_expand.png"></image>
+        </view>  -->
+      </block>
+    </view>
+  </view>
+</view>

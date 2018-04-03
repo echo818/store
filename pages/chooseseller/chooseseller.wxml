@@ -1,0 +1,34 @@
+<!-- search -->
+<view class='search-box flex-box white-bg mt-18'>
+  <input class='search__input' placeholder='请输入邀请码' bindinput='inputEvt'/>
+  <button class='search__btn btn--red' bindtap='searchEvt'>提交</button>
+</view> 
+<!-- scan -->
+<view class='scan-box flex-box white-bg mt-18' bindtap='scanEvt'>
+  <image class='scan__img' src='../../images/scan_icon.png'/>
+  <view class='scan__text arrow__icon'>扫码商家的小程序二维码</view>
+</view> 
+<!-- seller -->
+<view class='seller-title'>可选供应商(共3个)</view>
+<view class='seller-list white-bg'>
+  <swipeout wx:for='{{wholesalerList}}' wx:key='{{index}}'>
+    <view class='seller-cell arrow__icon' slot='cell'>{{item.wholesaler_name}}</view>
+    <button class='btn--red' style='width: 160rpx; border-radius: 0;' slot='more' bindtap='deleteEvt' data-id='{{item.wholesaler_id}}'>删除</button>
+  </swipeout>
+</view>
+<!-- dialog -->
+<dialog visible='{{delVisible}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'>您确认要删除此供应商吗？</view>
+    <view class='flex-box'>
+      <button class='dialog__btn dialog__btn--double btn--red' bindtap='cancelEvt'>取消</button>
+      <button class='dialog__btn dialog__btn--double btn--red' bindtap='confirmEvt'>确定</button>
+    </view>
+  </view>
+</dialog>
+<dialog visible='{{storeVisible}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'><text>邀请码输入正确~\n您可以在清新堡新购物啦！</text></view>
+    <button class='dialog__btn btn--red' bindtap='storeEvt'>进入清新堡新店铺</button>
+  </view>
+</dialog>

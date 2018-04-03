@@ -1,0 +1,59 @@
+/* search */
+.search__input {
+  flex: 1;
+  height: 88rpx;
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  color: #232326;
+}
+.search__btn {
+  width: 180rpx;
+  height: 88rpx;
+  border-radius: 0;
+}
+/* scan */
+.scan-box {
+  padding: 24rpx 30rpx;
+  line-height: 38rpx;
+}
+.scan__img {
+  width: 40rpx;
+  height: 38rpx;
+  padding-right: 10rpx;
+}
+.scan__text {
+  flex: 1;
+  font-size: 34rpx;
+  color: #232326;
+  position: relative;
+}
+.scan__text::after {
+  border-color: #C7C7CC;
+}
+/* seller */
+.seller-list {
+  overflow: hidden;
+}
+.seller-title {
+  padding: 18rpx 0 18rpx 30rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.seller-cell {
+  position: relative;
+  margin-left: 30rpx;
+  padding: 20rpx 30rpx 20rpx 0;
+  font-size: 34rpx;
+  color: #232326;
+  border-bottom: 1px solid #E0E0E0;
+}
+.seller-cell::after {
+  border-color: #C7C7CC;
+  right: 30rpx;
+}
+/* dialog */
+.dialog__btn--double {
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+}

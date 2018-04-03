@@ -1,0 +1,23 @@
+<view class='dialog-layer' wx:if='{{visible}}'>
+  <view class='dialog-box'>
+    <!-- main -->
+    <view class='dialog-main'>
+      <view class='dialog__title'>选择购买数量</view>
+      <view class='dialog-info'>
+        <view class='dialog-info__price'>售价:<text class='dialog-info__price--text'>¥{{price}}</text></view>
+        <view class='dialog-info__tips'>{{msg}}</view>
+      </view>
+      <!-- ctrl -->
+      <view class='dialog-ctrl'>
+        <button class='dialog-ctrl__btn dialog-ctrl__btn--cut' bindtap='cutEvt'>-</button>
+        <input class='dialog-ctrl__input' type='number' value='{{value}}' bindinput='inputValue'/>
+        <button class='dialog-ctrl__btn dialog-ctrl__btn--add' bindtap='addEvt'>+</button>
+      </view>
+    </view>
+    <!-- btn -->
+    <view class='dialog-btn'>
+      <button class='dialog__btn dialog__btn--cancel' bindtap='cancelEvt'>取消</button>
+      <button class='dialog__btn dialog__btn--confirm' bindtap='confirmEvt'>确定</button>
+    </view>
+  </view>
+</view>

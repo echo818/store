@@ -1,0 +1,81 @@
+<view class='cate-box'>
+  <!-- search -->
+  <view class='cate-search white-bg'>
+    <view class='search-btn' bindtap='searchEvt'>
+      <image class='search-btn__img' src='../../images/home_search_icon.png'/>
+      <text class='search-btn__text'>搜索您想要的商品</text>
+    </view>
+  </view>
+  <!-- cate -->
+  <view class='cate-info flex-box'>
+    <scroll-view class='cate-side' scroll-y>
+      <block wx:for='{{cateList}}' wx:key='{{index}}'>
+        <view class='cate-side__text cate-side__text--active' wx:if='{{item.id === cateId}}'>{{item.name}}</view>
+        <view class='cate-side__text' bindtap='switchCate' data-id='{{item.id}}' wx:else>{{item.name}}</view>
+      </block>
+    </scroll-view>
+    <!-- main -->
+    <view class='cate-main-box'>
+      <!-- sort -->
+      <view class='cate-sort flex-box'>
+        <view class='cate-sort__title' bindtap='sortEvt'>默认排序</view>
+        <view class='cate-sort__title' bindtap='brandEvt'>品牌</view>
+      </view>
+      <view class='cate-main'>
+        <view class='cate-sort-layer' wx:if='{{sortShow}}'>
+          <scroll-view class='cate-sort-main' scroll-y>
+            <view class='cate-sort-item'>
+              <view class='cate-sort__text cate-sort__text--active'>默认排序</view>
+              <image class='cate-sort__img' src='../../images/choice_icon.png'/>
+            </view>
+            <view class='cate-sort-item'>
+              <view class='cate-sort__text'>销量从高到低</view>
+            </view>
+            <view class='cate-sort-item'>
+              <view class='cate-sort__text'>价格从低到高</view>
+            </view>
+            <view class='cate-sort-item'>
+              <view class='cate-sort__text'>价格从高到低</view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class='cate-sort-layer' wx:if='{{brandShow}}'>
+          <view class='cate-sort-type'>
+            <view class='cate-sort__cell' bindtap='brandSelect' data-idx='{{index}}' wx:for='{{brandList}}' wx:key='{{index}}'>{{item}}</view>
+          </view>
+        </view>
+        <scroll-view class='cate-goods-box' scroll-y bindscrolltolower='getGoods'>
+          <!-- brand -->
+          <view class='cate-brand'>
+            <view class='cate-brand__title'>热门品牌</view>
+            <view class='cate-brand-list'>
+              <view class='cate-brand-item' bindtap='brandSelect' data-idx='{{index}}' wx:for='{{brandArr}}' wx:key='{{index}}'>{{item}}</view>
+              <view class='cate-brand-item' wx:if='{{brandArr.length !== 6}}'>更多></view>
+            </view>
+          </view>
+          <!-- goods -->
+          <view class='cate-goods'>
+            <view class='cate-goods-item flex-box' wx:for='{{productList}}' wx:key='{{index}}' bindtap='detailsEvt' data-id='{{item.product_id}}'>
+              <view class='cate-goods-img'>
+                <image class='cate-goods__img' src='{{item.image}}'/>
+              </view>
+              <view class='cate-goods-info'>
+                <view class='cate-goods__title'>{{item.name2}}</view>
+                <view class='cate-goods__spec'><text class='cate-goods__spec--text'>{{item.spec}}</text></view>
+                <view class='cate-goods-ctrl flex-box'>
+                  <view class='cate-goods__price'>¥<text class='cate-goods__price--text'>{{item.price}}</text>/{{item.sale_unit}}</view>
+                  <image class='cate-goods__btn' src='../../images/goods_buy_icon.png' catchtap='buyEvt' data-item='{{item}}'/>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- buydialog -->
+<buydialog visible='{{buyShow}}'
+  price='{{buyPrice}}'
+  stock='{{stock}}'
+  bindconfirm='confirmNum'/>

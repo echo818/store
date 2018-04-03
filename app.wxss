@@ -1,0 +1,92 @@
+/* structure */
+@import "dist/index.wxss";
+
+page {
+  background-color: #f3f4f6;
+  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  font-size: 28rpx;
+}
+.flex-box {
+  display: flex;
+}
+.mt-18 {
+  margin-top: 18rpx;
+}
+.mb-18 {
+  margin-bottom: 18rpx;
+}
+.mt-14 {
+  margin-top: 14rpx;
+}
+/* float */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.cf::before,
+.cf::after {
+  display: table;
+  content: " ";
+}
+.cf::after {
+  clear: both;
+}
+/* color */
+.white-bg {
+  background: #fff;
+}
+/* button */
+.btn--red::after {
+  border: 0;
+}
+.btn--red {
+  padding: 0;
+  font-size: 34rpx;
+  color: #fff;
+  background: #D4372F;
+  border-radius: 8rpx;
+}
+/* text */
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+/* icon */
+.arrow__icon::after {
+  content: " ";
+  display: inline-block;
+  height: 12rpx;
+  width: 12rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -7rpx;
+  right: 0;
+}
+/* dialog */
+.dialog-box {
+  padding: 60rpx 50rpx;
+}
+.dialog__title {
+  padding: 8rpx 0 16rpx;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+}
+.dialog__text {
+  padding: 8rpx 0;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.dialog__btn {
+  margin-top: 30rpx;
+}

@@ -1,0 +1,25 @@
+<view class='search-box flex-box'>
+  <!-- head -->
+  <view class='search-head flex-box white-bg'>
+    <view class='search-input'>
+      <image class='search-input__icon' src='../../images/home_search_icon.png'/>
+      <input class='search-input__text' placeholder='搜索您想要的商品'/>
+      <image class='search-input__img' src='../../images/clear_input_icon.png'/>
+    </view>
+    <button class='search__btn btn--red'>搜索</button>
+  </view>
+  <scroll-view class='search-main' scroll-y>
+    <!-- list -->
+    <view class='search-list white-bg'>
+      <view class='search-item search-item--active'>怡宝</view>
+      <view class='search-item'>怡宝</view>
+      <view class='search-item'>怡宝</view>
+      <view class='search-item'>怡宝</view>
+    </view>
+    <!-- clear -->
+    <view class='search-clear'>
+      <image class='search-clear__img' src='../../images/clear_history_icon.png'/>
+      <text class='search-clear__text'>清空历史搜索</text>
+    </view>
+  </scroll-view>
+</view>

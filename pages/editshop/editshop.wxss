@@ -1,0 +1,60 @@
+/* form */
+.form-box {
+  display: block;
+}
+.form-block {
+  padding-left: 30rpx;
+  border-top: 1rpx solid #E0E0E0;
+  border-bottom: 1rpx solid #E0E0E0;
+}
+.form-item {
+  height: 64rpx;
+  line-height: 64rpx;
+  padding: 10rpx 0;
+}
+.form-item + .form-item {
+  border-top: 1rpx solid #E0E0E0;
+}
+.form-item__label {
+  line-height: 64rpx;
+  font-size: 30rpx;
+  color: #232326;
+}
+.form-item__input {
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 30rpx;
+  color: #232326;
+  padding-left: 20rpx;
+}
+.form-item--shop {
+  height: inherit;
+}
+.form-item-upload {
+  width: 274rpx;
+  height: 274rpx;
+  margin-top: 6rpx;
+  margin-bottom: 12rpx;
+  border: 1rpx dashed #E0E0E0;
+  border-radius: 8rpx;
+}
+.form-upload__img {
+  display: block;
+  width: 76rpx;
+  height: 76rpx;
+  margin: 72rpx auto 22rpx;
+}
+.form-upload__text {
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+/* button */
+.save__btn {
+  width: 670rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 100rpx auto 0;
+  font-size: 36rpx;
+}

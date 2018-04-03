@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#ccc",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "buydialog": "../../components/buydialog/buydialog",
+    "dialog": "../../components/dialog/dialog"
+  }
+}

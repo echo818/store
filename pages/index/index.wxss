@@ -1,0 +1,23 @@
+/* auth */
+.auth-box {
+  text-align: center;
+}
+.auth__img {
+  width: 138rpx;
+  height: 138rpx;
+  padding-top: 228rpx;
+}
+.auth__text {
+  width: 600rpx;
+  margin: 0 auto;
+  padding-top: 100rpx;
+  padding-bottom: 72rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.auth__btn {
+  width: 200rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+}

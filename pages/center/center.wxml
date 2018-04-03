@@ -1,0 +1,55 @@
+<!-- head -->
+<view class='head-box flex-box'>
+  <view class='head-avatar'>
+    <image class='head-avatar__img' src='{{custInfo.store_front_img || "../../images/user_avatar_img.png"}}'/>
+  </view>
+  <view class='head-info'>
+    <view class='head-info__name'>{{custInfo.store_name}}</view>
+    <view class='head-info__phone'>店铺信息管理</view>
+  </view>
+</view>
+<!-- order -->
+<view class='order-box white-bg flex-box'>
+  <view class='order-item'>
+    <view class='order-item-msg'>
+      <image class='order-item__img order-item__img--order' src='../../images/pend_order_icon.png'/>
+      <view class='order-item__num' wx:if='{{orderInfo.processing}}'>{{orderInfo.processing}}</view>
+    </view>
+    <view class='order-item__text'>待接单</view>
+  </view>
+  <view class='order-item'>
+    <view class='order-item-msg'>
+      <image class='order-item__img order-item__img--receive' src='../../images/pend_receive_icon.png'/>
+      <view class='order-item__num' wx:if='{{orderInfo.receiving}}'>{{orderInfo.receiving}}</view>
+    </view>
+    <view class='order-item__text'>待收货</view>
+  </view>
+  <view class='order-item'>
+    <view class='order-item-msg'>
+      <image class='order-item__img order-item__img--cancel' src='../../images/pend_cancel_icon.png'/>
+      <view class='order-item__num' wx:if='{{orderInfo.holded}}'>{{orderInfo.holded}}</view>
+    </view>
+    <view class='order-item__text'>待取消</view>
+  </view>
+  <view class='order-item order-item--all'>
+    <view class='order-item-msg'>
+      <image class='order-item__img order-item__img--all' src='../../images/all_order_icon.png'/>
+    </view>
+    <view class='order-item__text'>全部订单</view>
+  </view>
+</view>
+<!-- list -->
+<view class='list-box white-bg mt-14'>
+  <navigator class='list-cell flex-box' url="/pages/coupon/coupon">
+    <image class='list-cell__icon' src='../../images/center_coupon_icon.png'/>
+    <view class='list-cell__text'>优惠券</view>
+    <view class='list-cell__btn'>
+      <text wx:if='{{couponLen}}'>{{couponLen}}张</text>
+    </view>
+  </navigator>
+  <view class='list-cell flex-box'>
+    <image class='list-cell__icon' src='../../images/center_phone_icon.png'/>
+    <view class='list-cell__text'>联系客服</view>
+    <view class='list-cell__btn'></view>
+  </view>
+</view>

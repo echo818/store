@@ -1,0 +1,19 @@
+/* login */
+.login-box {
+  text-align: center;
+}
+.login__text {
+  width: 510rpx;
+  margin: 0 auto;
+  padding-top: 360rpx;
+  padding-bottom: 72rpx;
+  line-height: 36rpx;
+  font-size: 28rpx;
+  color: #232326;
+}
+.login__btn {
+  width: 200rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+}

@@ -1,0 +1,126 @@
+<!-- sort -->
+<view class='special-sort white-bg flex-box'>
+  <view class='special-sort__title'>默认排序</view>
+  <view class='special-sort__title'>分类</view>
+  <view class='special-sort__title special-sort__title--active'>品牌</view>
+</view>
+<!-- main -->
+<scroll-view class='special-main' scroll-y>
+  <view class='special-head white-bg mt-14'>
+    <view class='special-head__title'>满￥100减30</view>
+  </view>
+  <view class='special-goods flex-box'>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+    <view class='special-goods-item'>
+      <image class='special-goods__img' src='../../images/activity_goods_img.png'/>
+      <view class='special-goods-coupon'>
+        <text class='special-goods__tag special-goods__tag--less'>省15.55元</text>
+        <text class='special-goods__tag special-goods__tag--full'>满100-10</text>
+      </view>
+      <view class='special-goods__title ellipsis'>原味维他柠檬茶新日期</view>
+      <view class='special-goods__spec ellipsis'><text class='special-goods__spec--text'>250ml*24|12个月</text></view>
+      <view class='special-goods-info flex-box'>
+        <text class='special-goods__price'>¥<text class='special-goods__price--text'>30.50</text>/箱</text>
+        <image class='special-goods__buy' src='../../images/goods_buy_icon.png'/>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- layer -->
+<view class='special-sort-layer' wx:if='{{false}}'>
+  <scroll-view class='special-sort-main' scroll-y>
+    <view class='special-sort-item'>
+      <view class='special-sort__text special-sort__text--active'>默认排序</view>
+      <image class='special-sort__img' src='../../images/choice_icon.png'/>
+    </view>
+    <view class='special-sort-item'>
+      <view class='special-sort__text'>默认排序</view>
+    </view>
+    <view class='special-sort-item'>
+      <view class='special-sort__text'>默认排序</view>
+    </view>
+    <view class='special-sort-item'>
+      <view class='special-sort__text'>默认排序</view>
+    </view>
+  </scroll-view>
+</view>
+<view class='special-sort-layer' wx:if='{{false}}'>
+  <view class='special-sort-type'>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell special-sort__cell--active'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell special-sort__cell--active'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+    <view class='special-sort__cell'>怡宝</view>
+  </view>
+</view>

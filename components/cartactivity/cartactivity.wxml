@@ -1,0 +1,11 @@
+<!--components/cartactivity/cartactivity.wxml-->
+<view wx:if="{{typ}}" class="flex-row on-sale">
+  <view class="on-sale__type">{{ typ }}</view>
+  <view class="flex-col flex-1">
+    <view class="on-sale__title">{{ title }}</view>
+    <view wx:if="{{expl}}" class="on-sale__expl">{{ expl }}</view>
+  </view>
+  <navigator class="on-sale__link" wx:if="{{url}}" url="{{url}}">
+    去查看>
+  </navigator>
+</view>

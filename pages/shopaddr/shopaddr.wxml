@@ -1,0 +1,36 @@
+<!-- form -->
+<form class='form-box mt-18 white-bg' bindsubmit='submit'>
+  <view class='form-item flex-box'>
+    <input class='form-item__input' placeholder='省份、城市，区县'/>
+    <image class='form-item__img' src='../../images/arrow_right_icon.png'/>
+  </view>
+  <view class='form-item'>
+    <textarea class='form-item__textarea' placeholder='详细地址，如街道，门牌信息等'/>
+  </view>
+</form>
+<!-- dialog -->
+<dialog visible='{{true}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'>绑定成功</view>
+    <view class='dialog__text'>继续完善店铺信息，方便您下单</view>
+    <button class='dialog__btn btn--red'>确定</button>
+  </view>
+</dialog>
+<dialog visible='{{true}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'>邀请码输入正确~您可以在清新堡新购物啦！</view>
+    <button class='dialog__btn btn--red'>确定</button>
+  </view>
+</dialog>
+<dialog visible='{{true}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'>检查到您的地址不在此供应商的配送范围内，可能无法送货</view>
+    <button class='dialog__btn btn--red'>确定</button>
+  </view>
+</dialog>
+<dialog visible='{{true}}'>
+  <view class='dialog-box'>
+    <view class='dialog__text'>请先添加收货地址</view>
+    <button class='dialog__btn btn--red'>确定</button>
+  </view>
+</dialog>

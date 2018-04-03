@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品清单",
+  "usingComponents": {
+    "cart-item": "../../components/cartitem/cartitem"
+  }
+}

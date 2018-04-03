@@ -1,0 +1,8 @@
+<view class='swipe-box' bindtouchstart='startEvt' bindtouchmove='moveEvt' bindtouchend='endEvt' bindtouchcancel='endEvt'>
+  <view class='swipe-more' style='{{moreStyle}}'>
+    <slot name='more'/>
+  </view>
+  <view class='swipe-cell' style='{{cellStyle}}' bindtap='hideEvt'>
+    <slot name='cell'/>
+  </view>
+</view>

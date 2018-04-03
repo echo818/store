@@ -1,0 +1,83 @@
+<!--pages/cart/cart.wxml-->
+<view wx:if="{{hasCart}}">
+  <view class="plr-30 flex-row cart-header">
+    <checkbox-group bindchange="handleSelectAll">
+      <checkbox value="selectAll" checked="{{selectAll}}"/>
+    </checkbox-group>
+    <view class="flex-1" style="color:#232326;">清新宝新</view>
+    <view style="color:#666;" bindtap="editOrFinish">
+      <text wx:if="{{!isEdit}}">编辑</text>
+      <text wx:else>完成</text>
+    </view>
+  </view>
+  <cart-activity typ="{{rule_title}}"
+    title="{{rule_str}}"
+    expl="{{store_rule_short}}"/>
+  <checkbox-group bindchange="checkboxChange">
+    <view wx:for="{{activities}}" wx:for-item="act" wx:key="{{aIndex}}" wx:for-index="aIndex" class="pl-30 cart-block">
+      <view class="pr-30">
+        <cart-activity typ="{{act.rule_title}}"
+          title="{{act.rule_str}}"
+          expl="{{act.store_rule_short}}"
+          url="{{act.activity_url}}"/>
+      </view>
+      <swipeout wx:for="{{act.product}}" wx:for-item="prod" wx:key="{{pIndex}}" wx:for-index="pIndex">
+        <view class="pr-30" slot="cell">
+          <cart-item item="{{prod}}" bindnumchange="changeNum">
+            <checkbox slot="check" value="{{prod.product_id}}" checked="{{prod.selected}}"/>
+            <view slot="edit" class="cart-item__num--edit" data-item="{{prod}}" bindtap="changeNum">×{{prod.num}}</view>
+          </cart-item>
+        </view>
+        <button class="cart-item__del" slot="more" data-prod="{{prod}}" bindtap="deleteProducts">删除</button>
+      </swipeout> 
+    </view>
+  </checkbox-group>
+  <view class="pl-30 cart-delivery">
+    <image class="info-icon" src="/images/info_icon.png"></image>
+    <text wx:if="{{sub_total>=min_trade_amount}}" bindtap="explDeliveryPrice">本单已满起送价</text>
+    <text wx:else bindtap="explDeliveryPrice">满{{min_trade_amount}}元起送，还差{{diff_amount}}元</text>
+  </view>
+  <view class="pl-30 cart-stat" wx:if="{{!isEdit}}">
+    <view class="flex-row {{checkedNum <= 0 ? 'cart-opt__select' : checkedNum > 0 && sub_total >= min_trade_amount ? 'cart-opt__place' : 'cart-opt__gather'}}">
+      <view class="flex-col flex-1" style="background-color:#fff;padding:26rpx 0;">
+        <view class="cart-stat__subtotal">
+          <text style="color:#232326;">小计：</text>
+          <text style="color:#d4372f;">￥{{ grand_total }}</text>
+        </view>
+        <view class="flex-row cart-stat__total">
+          <view style="margin-right:30rpx;">总额：￥{{ sub_total }}</view>
+          <view class="flex-1" wx:if="{{prom_total>0}}">优惠：-￥{{ prom_total }}</view>
+        </view>
+      </view>
+      <view class="flex-row cart-opt">
+        <view wx:if="{{checkedNum <= 0}}" style="text-align:center;width:242rpx;">请选择商品</view> 
+        <view wx:elif="{{checkedNum > 0 && sub_total >= min_trade_amount}}" bindtap="placeAnOrder" style="text-align:center;width:232rpx">去下单({{checkedNum}})</view>
+        <view wx:else style="text-align:center;width:232rpx">去凑单</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="cart-opt cart-opt__del">
+    <text class="fr {{checkedNum <= 0 ? 'cart-opt__del--inactive' : 'cart-opt__del--active'}}" bindtap="deleteProducts">删除所选</text>
+  </view>
+</view>
+<view wx:else class="flex-col cart-no-data" style="align-items:center;">
+  <image src="/images/cart_no_data.png" style="width:100rpx;height:100rpx;margin-bottom:40rpx;"/>
+  <text>您的购物车空空的</text>
+</view>
+
+<view class="{{isOpen ? 'mask-layer' : ''}}"></view>
+<view class="dialog" wx:if="{{isOpen}}">
+  <view class="dialog-title">以下商品无法结算(7)</view>
+  <view class="dialog-desc">商品下架、删除、卖光后，将移除出购物车</view>
+  <view class="dialog-body" wx:for="{{invalidProds}}">
+   <cart-item item="{{item}}"/>
+   <view class="split-line"></view>
+  </view>
+  <view class="dialog-confirm" bindtap="closeDialog">确定</view>
+</view>
+
+<buy-dialog visible="{{isBuy}}"
+  value="{{num}}"
+  price="{{price}}"
+  stock="{{stock}}"
+  bindconfirm="confirmNum"/>

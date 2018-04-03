@@ -1,0 +1,108 @@
+/* pages/coupon/coupon.wxss */
+
+.coupon-box {
+  padding: 0 30rpx;
+}
+/* .coupon-item {
+  position: relative;
+  border-radius: 6rpx;
+  box-shadow: 0 2rpx 13rpx 0 rgba(212,55,47,0.30);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28rpx;
+}
+.coupon-item__body {
+  display: flex;
+  justify-content: space-around;
+  height: 162rpx;
+  background-color: #ff5959;
+  color: #fff;
+}
+.coupon-item__body--disabled {
+  background-color: #cbccd0;
+}
+.coupon-item__text {
+  flex: 1;
+  height: 81rpx;
+}
+.coupon-item__condition {
+  display: flex;
+  flex-direction: column;
+  width: 193rpx;
+  text-align: center;
+  border-right: 1px dashed #fff;
+}
+.coupon-item__time {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  margin-left: 20rpx;
+}
+.coupon-item__status {
+  position: absolute;
+  top: 60rpx;
+  right: 30rpx;
+  color: #d4372f;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  padding: 8rpx 18rpx;
+}
+.coupon-item__status--unused {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+.coupon-item__status--used, .coupon-item__status--expired {
+  width: 120rpx;
+  height: 120rpx;
+} */
+/* .coupon-item__desc {
+  height: 84rpx;
+  line-height: 74rpx;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+} */
+
+
+/* .kind-list-item-hd {
+  height: 84rpx;
+  font-size: 24rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  transition: opacity .3s;
+}
+.kind-list-item-hd-show {
+  opacity: .2;
+}
+.kind-list-text{
+  flex: 1;
+}
+.kind-list-img {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.coupon-item--active {
+  background-color: #ff5959;
+}
+.coupon-item--inactive {
+  background-color: #cbccd0;
+} */
+
+.coupon-item__status {
+  position: absolute;
+  top: 60rpx;
+  right: 30rpx;
+  color: #d4372f;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  padding: 8rpx 18rpx;
+}
+.coupon-item__status--unused {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+.coupon-item__status--used, .coupon-item__status--expired {
+  width: 120rpx;
+  height: 120rpx;
+}

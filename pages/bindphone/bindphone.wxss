@@ -1,0 +1,64 @@
+/* head */
+.head-tips {
+  padding: 40rpx 36rpx;
+}
+.head-tips__img {
+  width: 30rpx;
+  height: 30rpx;
+}
+.head-tips__text {
+  line-height: 30rpx;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+/* form */
+.form-box {
+  display: block;
+  border-top: 1rpx solid #E0E0E0;
+  border-bottom: 1rpx solid #E0E0E0;
+}
+.form-cell {
+  padding: 20rpx 30rpx;
+  height: 64rpx;
+}
+.form-cell + .form-cell {
+  border-top: 1rpx solid #E0E0E0;
+}
+.form-cell__icon--phone {
+  width: 24rpx;
+  height: 36rpx;
+  padding-top: 14rpx; 
+  padding-right: 24rpx;
+}
+.form-cell__icon--code {
+  width: 21rpx;
+  height: 36rpx;
+  padding-top: 14rpx;
+  padding-right: 27rpx;
+}
+.form-cell__input {
+  flex: 1;
+  height: 64rpx;
+  line-height: 64rpx;
+  padding-right: 100rpx;
+  font-size: 34rpx;
+  color: #232326;
+}
+.form-cell__btn {
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 30rpx;
+}
+.form-cell__btn--disabled {
+  background: #bbb;
+}
+/* button */
+.save__btn {
+  width: 670rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 70rpx auto 0;
+  font-size: 32rpx;
+}

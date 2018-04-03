@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "购物车",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "cart-item": "../../components/cartitem/cartitem",
+    "swipeout": "../../components/swipeout/swipeout",
+    "cart-activity": "../../components/cartactivity/cartactivity",
+    "buy-dialog": "../../components/buydialog/buydialog"
+  }
+}

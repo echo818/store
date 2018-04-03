@@ -1,0 +1,6 @@
+<!-- auth -->
+<view class='auth-box'>
+  <image class='auth__img' src='../../images/auth_img.png'/>
+  <view class='auth__text'>您未开通权限，部分功能无法正常使用，请先去开通权限~~</view>
+  <button class='auth__btn btn--red' bindtap='openAuth'>开通权限</button>
+</view>

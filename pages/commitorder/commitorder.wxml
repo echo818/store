@@ -1,0 +1,100 @@
+<!--pages/commitorder/commitorder.wxml-->
+<view>
+  <navigator class="flex-row cmt-order__block cmt-order__rcvr">
+    <block wx:if="{{true}}">
+      <view class="flex-col flex-1">
+        <view class="cmt-order__rcvr--name">
+          <text style="margin-right:36rpx;">吴大宝</text>
+          <text>15817347225</text>
+        </view>
+        <view class="color-666 cmt-order__rcvr--addr">
+          <view>地址地址地址址地址地址地址地址地址地</view>
+          <view wx:if="{{true}}" class="cmt-order__rcvr--hint">
+            <image class="info-icon" src="/images/info_icon.png" />
+            您的地址不在配送范围内，可能无法送货
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="flex-1 cmt-order__setaddr">
+        <image class="cmt-order__setaddr--icon" src="/images/location_icon.png"/>
+        <text>点击设置收货信息</text>
+      </view>
+    </block>
+    <image class="arrow-right-icon" src="/images/arrow_right_icon.png"/>
+  </navigator>
+  <view class="cmt-order__block">
+    <view class="height-88 split-line ws">
+      <image class="ws-icon" src="/images/ws_icon.png"/> 
+      清新堡新
+    </view>
+    <navigator url="../catalogue/catalogue" class="flex-row split-line cmt-order__prod">
+      <view class="flex-1">
+        <image class="cmt-order__prod--img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+        <image class="cmt-order__prod--img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+        <image class="cmt-order__prod--img" src="http://assets.lelai.com/images/catalog/product/388x388/15042814/1201457.jpg"/>
+      </view>
+      <text class="dot" style="margin-right:12rpx;"/>
+      <text class="dot" style="margin-right:12rpx;"/>
+      <text class="dot" style="margin-right:80rpx;"/>
+      <view class="cmt-order__prod--total">
+        共17件
+        <image class="arrow-right-icon" src="/images/arrow_right_icon.png"/>
+      </view>
+    </navigator>
+    <view class="cmt-order__coupon">
+      <view class="color-666 cmt-order__coupon--title">已享优惠</view>
+      <view class="cmt-order__coupon--name">【满赠】已享受"优惠名称"，已赠红牛500ml×4</view>
+      <view class="cmt-order__coupon--name">【满减】已享受"优惠名称"，已减10元</view>
+      <view class="cmt-order__coupon--name">【满赠】已享受"优惠名称"，已赠红牛500ml×4</view>
+    </view>
+  </view>
+  <view class="cmt-order__block">
+    <navigator url="../catalogue/catalogue" class="flex-row split-line height-88">
+      <view class="flex-1 color-666">使用优惠券</view>
+      <view class="cmt-order__usecoupon">已减20元</view>
+      <image class="arrow-right-icon" src="/images/arrow_right_icon.png"/>
+    </navigator>
+    <view class="flex-row split-line height-88">
+      <view class="flex-1 color-666">配送承诺</view>
+      <view class="color-232">今天下单，明天送达</view>
+    </view>
+    <view class="flex-row height-88">
+      <view class="flex-1 color-666">支付方式</view>
+      <view class="color-232">货到付款</view>
+    </view>
+  </view>
+  <view class="cmt-order__block cmt-order__msg">
+    <view class="color-666 cmt-order__msg--title">给商家留言</view>
+    <textarea class="cmt-order__msg--content" bindblur="bindTextAreaBlur" placeholder="在此处给商家留言（60字以内）" maxlength="60"/>
+  </view>
+  <view class="cmt-order__block cmt-order__total">
+    <view class="flex-row" style="margin-bottom:30rpx;">
+      <view class="flex-1 color-666">商品总额</view>
+      <view class="color-232">¥5500.00</view>
+    </view>
+    <view class="flex-row" style="margin-bottom:30rpx;" wx:if="{{true}}">
+      <view class="flex-1 color-666">特价优惠</view>
+      <view class="color-232">-¥500.00</view>
+    </view>
+    <view class="flex-row" style="margin-bottom:30rpx;" wx:if="{{true}}">
+      <view class="flex-1 color-666">活动优惠</view>
+      <view class="color-232">-¥500.00</view>
+    </view>
+    <view class="flex-row" wx:if="{{true}}">
+      <view class="flex-1 color-666">优惠券</view>
+      <view class="color-232">-¥20.00</view>
+    </view>
+  </view>
+  <view class="cmt-order__block" style="padding-right:0">
+    <view class="flex-row cmt-order__sum">
+      <view class="flex-1 flex-col cmt-order__pay">
+        <view style="color:#232326;">实付：<text style="color:#d4372f;">￥4450.00</text></view>
+        <view class="cmt-order__save" wx:if="{{true}}">累计节省：￥1030</view>
+      </view>
+      <view class="cmt-order__cmt">提交订单</view>
+    </view>
+  </view>
+</view>
+ 

@@ -1,0 +1,64 @@
+<!-- swiper -->
+<swiper class='goods-swiper' indicator-dots='{{true}}'>
+  <swiper-item wx:for='{{productData.gallery}}' wx:key='{{index}}'>
+    <image class='goods-swiper__img' src='{{item}}'/>
+  </swiper-item>
+</swiper>
+<!-- time -->
+<view class='goods-time flex-box' wx:if='{{productData.is_special}}'>
+  <view class='goods-time-left'>
+    <view class='goods-time__title'>限时特价</view>
+    <view class='goods-time__desc'>限购{{productData.restrict_daily}}件，超出按原价结算</view>
+  </view>
+  <view class='goods-time-right'>
+    <view class='goods-time__text'>倒计时</view>
+    <view class='goods-time__tag'><text class='goods-time__tag--text'>{{date.hour}}</text>时<text class='goods-time__tag--text'>{{date.minute}}</text>分<text class='goods-time__tag--text'>{{date.second}}</text>秒</view>
+  </view>
+</view>
+<!-- brief -->
+<view class='goods-brief white-bg'>
+  <view class='goods-brief--title'>{{productData.name2}}</view>
+  <view class='goods-brief-info flex-box'>
+    <view class='goods-brief__price'>¥<text class='goods-brief__price--text'>{{productData.price}}</text></view>
+    <view class='goods-brief__cost'>¥{{productData.original_price}}</view>
+    <view class='goods-brief__num'>已售{{productData.sold_qty}}</view>
+  </view>
+</view>
+<!-- coupon -->
+<view class='goods-coupon white-bg mt-18' wx:if='{{productData.coupon_list.length}}'>
+  <view class='goods-coupon__title'>优惠信息</view>
+  <view class='goods-coupon-cell flex-box' wx:for='{{productData.coupon_list}}' wx:key='{{index}}'>
+    <view class='goods-coupon__tag'>优惠券</view>
+    <view class='goods-coupon__text'>{{item.coupon_title}}</view>
+    <view class='goods-coupon__btn'>领取</view>
+  </view>
+  <view class='goods-coupon-cell flex-box'  wx:for='{{productData.tags}}' wx:key='{{index}}'>
+    <view class='goods-coupon__tag'>{{item.icon_text}}</view>
+    <view class='goods-coupon__text ellipsis'>{{item.text}}</view>
+    <view class='goods-coupon__icon'/>
+  </view>
+</view>
+<!-- param -->
+<view class='goods-param white-bg mt-18' wx:if='{{productData.parameters.length}}'>
+  <view class='goods-param__title'>商品参数</view>
+  <view class='goods-param-cell flex-box' wx:for='{{productData.parameters}}' wx:key='{{index}}'>
+    <view class='goods-param__key'>{{item.key}}</view>
+    <view class='goods-param__value'>{{item.value}}</view>
+  </view>
+</view>
+<!-- ctrl -->
+<view class='goods-ctrl flex-box'>
+  <view class='goods-ctrl-cart' bindtap='cartEvt'>
+    <view class='goods-ctrl-info'>
+      <image class='goods-ctrl__img' src='../../images/goods_cart_icon.png'/>
+      <view class='goods-ctrl__num'>{{cartNum}}</view>
+    </view>
+    <view class='goods-ctrl__text'>购物车</view>
+  </view>
+  <button class='goods-ctrl__btn btn--red' bindtap='buyEvt'>加入购物车</button>
+</view>
+<!-- buydialog -->
+<buydialog visible='{{buyShow}}'
+  price='{{buyPrice}}'
+  stock='{{stock}}'
+  bindconfirm='confirmNum'/>

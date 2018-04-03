@@ -1,0 +1,29 @@
+<view class="flex-row cart-item">
+  <slot name="check"/>
+  <view class="cart-item__link" bindtap="checkDetail">
+    <image class="cart-item__img" src="{{item.image}}"/>
+    <view class="cart-item__status" wx:if="{{item.status!==1}}">已下架</view> 
+  </view>
+  <view class="flex-col flex-1" bindtap="checkDetail">
+    <view class="cart-item__name">{{ item.name }}</view>
+    <view class="cart-item__spec">{{ item.unite_specification }}
+      <text wx:if="{{item.sales_attribute_value}}"> | {{ item.sales_attribute_value }}</text>
+      <text wx:if="{{item.shelf_life}}"> | {{ item.shelf_life }}</text>
+    </view>
+    <view class="cart-item__sale">
+      <label wx:if="{{item.qty}}" style="margin-right:20rpx;">仅剩{{ item.qty }}件</label>
+      <label wx:if="{{item.minimum_order}}">{{ item.minimum_order }}件起订</label>
+    </view>
+    <view class="flex-row">
+      <view class="flex-1 cart-item__price--cur">￥{{ item.price }}</view>
+      <view class="cart-item__price--orig" style="flex:2">￥{{ item.original_price }}</view>
+    </view>
+    <view class="cart-item__limit" wx:if="{{item.restrict_daily}}">
+      <image class="waiting-icon" src="/images/waiting_icon.png"></image>
+      <text>特价限购{{ item.restrict_daily }}件，超出部分按原价售卖</text>
+    </view>
+  </view>
+  <view class="cart-item__num}}">
+    <slot name="edit"/>
+  </view>
+</view>

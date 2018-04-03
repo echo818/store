@@ -1,0 +1,7 @@
+<!-- login -->
+<view class='login-box'>
+  <view class='login__text' wx:if='{{type === 1}}'>您的账户被另一个微信登录，已退出登录</view>
+  <view class='login__text' wx:elif='{{type === 2}}'>检查到您的账户正在被另一个微信登录，现在登录，另一个账户将会退出</view>
+  <button class='login__btn btn--red' bindtap='loginEvt' wx:if='{{type === 1}}'>重新登录</button>
+  <button class='login__btn btn--red' bindtap='loginEvt' wx:elif='{{type === 2}}'>立即登录</button>
+</view>

@@ -1,0 +1,29 @@
+<view class='info-wrap'>
+  <!-- head -->
+  <view class='info-head-box mt-14 white-bg'>
+    <view class='info-head flex-box'>
+      <image class='info-avatar__img' src='{{info.logo}}'/>
+      <view class='info-head-content'>
+        <view class='info-content__title ellipsis'>{{info.wholesaler_name}}</view>
+        <view class='info-content__phone'>13280808080</view>
+        <view class='info-content__addr ellipsis'>江门市新会大道18号榕树坊</view>
+      </view>
+      <image class='info-head__img' src='../../images/arrow_right_icon.png'/>
+    </view>
+    <view class='info-notice'>
+      <view class='info-notice__title'>公告</view>
+      <!-- <view class='info-notice__subtitle'>{{info.notice_title}}</view> -->
+      <view class='info-notice__text'>{{info.notice}}</view>
+    </view>
+  </view>
+  <!-- main -->
+  <view class='info-main-box mt-14 white-bg'>
+    <view class='info-main'>
+      <view class='info-main__title'>配送信息</view>
+      <view class='info-main__text'>起送价: {{info.min_trade_amount}}元</view>
+      <view class='info-main__text'>送达时间: 24h内送达</view>
+      <view class='info-main__text'>配送范围</view>
+    </view>
+  </view>
+  <map class='info__map' longitude='116.296106' latitude='40.105457' scale='11' polyline='{{info.delivery_range}}'/>
+</view>

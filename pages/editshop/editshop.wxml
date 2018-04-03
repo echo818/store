@@ -1,0 +1,40 @@
+<!-- form -->
+<form class='form-box mt-18'>
+  <view class='form-block white-bg'>
+    <view class='form-item flex-box'>
+      <view class='form-item__label'>收货人</view>
+      <input class='form-item__input' placeholder='(必填)'/>
+    </view>
+    <view class='form-item flex-box'>
+      <view class='form-item__label'>收货手机号</view>
+      <input class='form-item__input' placeholder='(必填)'/>
+    </view>
+    <view class='form-item flex-box'>
+      <view class='form-item__label'>收货地址</view>
+      <input class='form-item__input' placeholder='(必填)'/>
+    </view>
+  </view>
+  <view class='form-block white-bg mt-18'>
+    <view class='form-item flex-box'>
+      <view class='form-item__label'>店主姓名</view>
+      <input class='form-item__input'/>
+    </view>
+    <view class='form-item'>
+      <view class='form-item__label'>店主电话</view>
+      <input class='form-item__input'/>
+    </view>
+    <view class='form-item flex-box'>
+      <view class='form-item__label'>店铺名称</view>
+      <input class='form-item__input'/>
+    </view>
+    <view class='form-item form-item--shop'>
+      <view class='form-item__label'>店铺图片</view>
+      <view class='form-item-upload'>
+        <image class='form-upload__img' src='../../images/upload_icon.png'/>
+        <view class='form-upload__text'>点击添加照片</view>
+      </view>
+    </view>
+  </view>
+</form>
+<!-- button -->
+<button class='save__btn btn--red'>保存</button>
